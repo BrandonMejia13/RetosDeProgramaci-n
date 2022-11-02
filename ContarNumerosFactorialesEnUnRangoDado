@@ -1,0 +1,40 @@
+# Contar números factoriales en un rango dado
+
+Un número F es un número factorial si existe algún entero I >= 0 tal que F = I! (es decir, F es factorial de I). 
+Ejemplos de números factoriales son 1, 2, 6, 24, 120,…. 
+Escriba un programa que tome como entrada dos enteros largos 'bajo' y 'alto' donde 0 < bajo < alto 
+y encuentre el conteo de números factoriales en el intervalo cerrado [bajo, alto]. 
+
+Ejemplos:
+Entrada: 0 1
+Salida: 1 // Razón: Solo el número factorial es 1
+Entrada: 12 122
+Salida: 2 // Razón: los números factoriales son 24, 120
+Entrada: 2 720
+Salida: 5 // Los números factoriales son: 2, 6, 24, 120, 720
+
+#################################################################################################################
+
+Programa en java | Contar números factoriales el rango dado
+[Bajo, Alto]
+
+public class BrandonDev {
+	static int contarFactorial(int bajo, int alto)	{
+		int fact = 1, x = 1;
+		while (fact < bajo) {
+			fact = fact * x;
+			x++;
+		}    
+		int resultado = 0;
+		while (fact <= alto) {
+			resultado++;
+			fact = fact * x;
+			x++;
+		}
+		return resultado;
+	}
+  
+	public static void main (String[] args) {
+		System.out.print("Count is " + contarFactorial(2, 720));
+	}
+}
