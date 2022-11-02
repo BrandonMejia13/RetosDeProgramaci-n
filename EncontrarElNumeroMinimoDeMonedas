@@ -1,0 +1,45 @@
+# Encontrar el número minimo de monedas
+
+Dado un valor de V Rs y un suministro infinito de cada una de 
+las denominaciones {1, 2, 5, 10, 20, 50, 100, 500, 1000} monedas/billetes valorados, 
+la tarea es encontrar el número mínimo de monedas y /o notas necesarias para hacer el cambio?
+
+Ejemplos:
+Entrada: V = 70
+Salida: 2
+Explicación: Necesitamos un billete de 50 Rs y un billete de 20 Rs.
+Entrada: V = 121
+Salida: 3
+Explicación:  Necesitamos un billete de 100 Rs, un billete de 20 Rs y una moneda de 1 Rs.
+
+###############################################################################################
+
+Programa en java | Encontrar el número minimo de monedas
+Numero de denominadores
+
+import java.util.*;
+
+public class BrandonDev {
+
+	static int denominadores[] = {1, 2, 5, 10, 20, 50, 100, 500, 1000};
+	static int n = denominadores.length;
+  
+	static void encontrarMinimo(int V) {  
+		Vector<Integer> resultado = new Vector<>();
+		for (int i = n - 1; i >= 0; i--) {
+			while (V >= denominadores[i]) {
+				V -= denominadores[i];
+				resultado.add(denominadores[i]);
+			}
+		}    
+		for (int i = 0; i < resultado.size(); i++) {
+			System.out.print(" " + resultado.elementAt(i));
+		}
+	}
+  
+	public static void main(String[] args) {
+		int n = 93;
+		System.out.print("El siguiente es el número minimo de cambio para " + n + ": ");
+		encontrarMinimo(n);
+	}
+}
