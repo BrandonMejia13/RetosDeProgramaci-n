@@ -1,2 +1,1 @@
-# RetosDeProgramacion
-En este repositorio van a estar todas las soluciones de los retos propuestos en youtube, linkedIn, facebook y demás...
+# Practica-UpsolvingYoutube
